@@ -26,7 +26,8 @@
             // Printing the result with object
             Console.WriteLine("\t"+o +" - "+ o.GetType().Name);
         }
-
+        
+        // Question 2 string questions
         public static void question_2()
         {
             string s = "Supercalifragilisticexpialidocious";
@@ -84,6 +85,7 @@
             Console.WriteLine("\tE. The Last composer : " + wordArr[wordArr.Length - 1 ]);
         }
 
+        // Question 3 : function triangleArea(a,b,c)
         public static void question_3()
         {
             // Printing the result of triangleArea function 
@@ -99,6 +101,7 @@
             return area;
         }
 
+        // Question 4 Separate odd and even integers
         public static void question_4()
         {
             Console.WriteLine("\nQ.4 Write a program in C# Sharp to separate odd and even integers");
@@ -112,11 +115,22 @@
                 int num = Convert.ToInt32(Console.ReadLine());
                 numbers[i-1] = num; 
             }
+            var oddNumbers = new List<int>();
+            var evenNumbers = new List<int>();
+            foreach (int i in numbers)
+            {
+                if (i % 2 == 1) oddNumbers.Add(i);
+                if (i % 2 == 0) evenNumbers.Add(i);
+            }
             // Printing odd and even numbers using LINQ Method select and where
-            Console.WriteLine("\tOdd Numbers : " + String.Join(",", numbers.Select(x => x).Where(x=>x%2 == 1)));
-            Console.WriteLine("\tEven Numbers : " + String.Join(",", numbers.Select(x=> x).Where(x=>x%2 == 0)));
+            //Console.WriteLine("\tOdd Numbers : " + String.Join(",", numbers.Select(x => x).Where(x=>x%2 == 1)));
+            //Console.WriteLine("\tEven Numbers : " + String.Join(",", numbers.Select(x=> x).Where(x=>x%2 == 0)));
+            
+            // String.Join function will convert list into comma seperated string 
+            Console.WriteLine("\tOdd Numbers : " + String.Join(", ",oddNumbers));
+            Console.WriteLine("\tEven Numbers : " + String.Join(", ",evenNumbers));
         }
-        // Question 5 
+        // Question 5 : A function inside(x,y,x1,y1,x2,y2)
         public static bool inside(double x, double y, double x1, double y1, double x2, double y2)
         {
             // logic for whether point is inside rectangle or not
